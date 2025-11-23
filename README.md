@@ -1,6 +1,6 @@
 ## tmc-hello-world
 CMake configurations to create minimal "Hello, world!" applications
-using the TooManyCooks async runtime.
+using the TooManyCooks async runtime. TMC is a header-only library and does not require or use CMake directly. CMake is used here only for example, but TMC is compatible with any build system.
 
 There are two separate project templates here: `minimal` and `recommended`.
 
@@ -22,7 +22,7 @@ Adds the following additional elements:
 3. (optional) attempt to find system `libhwloc`. If found, enable `TMC_USE_HWLOC`.
 4. (optional) attempt to find a system `tcmalloc`, `mimalloc`, or `jemalloc`. If found, link to it.
 5. Attempt to find system boost::asio. Otherwise, fallback to fetching standalone Asio.
-6. Additional `hello_world_asio` which returns `Hello, World!` over HTTP.
+6. Additional example `hello_world_asio` which returns `Hello, World!` over HTTP.
 7. `CMakePresets.json` which includes presets for Linux/Windows/Mac and Clang/GCC/MSVC.
 
 ```bash
@@ -36,5 +36,5 @@ cd ./recommended
 ### Dependencies
 - cmake
 - a C++ compiler
-- (optional) `libhwloc-dev` and `libtcmalloc-minimal4`
-- (really optional) `libboost-all-dev`
+- (optional) `libhwloc-dev` and `libtcmalloc-minimal4` system packages
+- (really optional) `libboost-all-dev` system package
