@@ -8,7 +8,7 @@ include(FetchContent)
 FetchContent_Declare(
   TooManyCooks
   GIT_REPOSITORY https://github.com/tzcnt/TooManyCooks.git
-  GIT_TAG v1.1.0
+  GIT_TAG v1.2.0
 )
 FetchContent_MakeAvailable(TooManyCooks)
 
