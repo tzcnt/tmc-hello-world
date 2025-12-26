@@ -36,5 +36,5 @@ cd ./recommended
 ### Dependencies
 - cmake
 - a C++ compiler
-- (optional) `libhwloc-dev` and `libtcmalloc-minimal4` system packages
+- (optional) `hwloc`, `libhwloc-dev` and `libtcmalloc-minimal4` system packages
 - (really optional) `libboost-all-dev` system package
