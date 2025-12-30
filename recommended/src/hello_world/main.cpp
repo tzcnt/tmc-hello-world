@@ -5,7 +5,7 @@
 #include <cstdio>
 
 tmc::task<int> my_async_main() {
-  std::printf("Hello, async world!");
+  std::printf("Hello, async world!\n");
   co_return 0;
 }
 

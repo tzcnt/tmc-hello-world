@@ -88,11 +88,11 @@ cmake_policy(SET CMP0167 NEW)
 # set(ENV{BOOST_CMAKE_ROOT} "/home/tzcnt/pkg-src/boost-1.88-src/boost_1_88_0/stage/lib/cmake/")
 if(DEFINED ENV{BOOST_CMAKE_ROOT})
     find_package(
-        Boost 1.82.0 CONFIG
+        Boost 1.82.0 CONFIG QUIET
         PATHS $ENV{BOOST_CMAKE_ROOT} NO_DEFAULT_PATH
     )
 else()
-    find_package(Boost 1.82.0 REQUIRED)
+    find_package(Boost 1.82.0 QUIET)
 endif()
 if (Boost_FOUND)
     add_compile_definitions(TMC_USE_BOOST_ASIO)
@@ -102,7 +102,7 @@ if (Boost_FOUND)
 
     message(STATUS "Using boost::asio from: ${Boost_DIR}")
 else()
-    # Get standalone asio from git
+    message(STATUS "boost::asio not found. Using standalone asio.")
     CPMAddPackage(
         NAME asio
         GIT_REPOSITORY https://github.com/chriskohlhoff/asio.git
@@ -115,8 +115,6 @@ else()
     include_directories(SYSTEM
         ${ASIO_INCLUDE_PATH}
     )
-    
-    message(STATUS "Using standalone asio")
 endif()
 
 ##### TMC build-time options #####
